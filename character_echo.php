@@ -7,12 +7,12 @@ $db = 'gamearchive';
 
 $conn = mysqli_connect($host, $user, $pass, $db);
 
-$query = mysqli_query($conn, "SELECT * FROM characters");
+$query3 = mysqli_query($conn, "SELECT * FROM characters");
 
-while ($row = mysqli_fetch_array($query)) {
-    echo "<section>";
-    echo "<img src='images/" . $row['Appearance'] . "'/>";
-    echo "<p>Name: " . $row['Name'] . "<br/> ";
+while ($row = mysqli_fetch_array($query3)) {
+    echo "<section class='card' style='width: 20rem;'>";
+    echo "<img src='images/" . $row['Appearance'] . "' class='card-img-top'/>";
+    echo "<section class='card-body'><p class='card-text'>Name: " . $row['Name'] . "<br/> ";
     echo "Surname: " . $row['Surname'] . "<br/> ";
     echo "Age: " . $row['Age'] . "<br/>";
     echo "Gender: " . $row['Gender'] . "<br/> ";
@@ -23,4 +23,5 @@ while ($row = mysqli_fetch_array($query)) {
     echo "Team: " . $row['Team'] . "<br/> ";
     echo "Status: " . $row['Status'] . "</p>";
     echo "</section>";
+    echo "</section>";  
 }
